@@ -25,9 +25,31 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 100
     );
-    $('body').append(dancer.$node);
-  });
-});
+    var colors = ['red', 'blue', 'magenta', 'yellow', 'cyan'];
 
+    (dancer.$node).css('border-color', `${colors[Math.floor(Math.random() * 5)]}`);
+    $('body').append(dancer.$node);
+    //(dancer.$node).append('<img src="https://media.tenor.com/images/233e3f30c35e821f99eaa1847671183b/tenor.gif"/>')
+    window.dancers.push(dancer);
+  });
+
+  $('.lineUpButton').on('click', function(event) {
+    var bodyHeight = $("body").height();
+    var bodyWidth = $("body").width();
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].setPosition(bodyHeight / 2, bodyWidth * i / window.dancers.length);
+    }
+  });
+
+  $('span.blinky').on('click', function(event) {
+    //makeDancer.prototype.spin.call(this);
+    console.log('hi')
+    $(this).angle += 5;
+    $(this).$node.css('transform', `rotate(${this.angle}deg)`);
+  });
+
+  
+
+});

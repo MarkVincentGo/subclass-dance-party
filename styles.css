@@ -2,14 +2,15 @@ body, html{
   height:100%;
 }
 body{
-  margin: 0px;
-  background-color:#444;
+  background: url(https://66.media.tumblr.com/854e236aa426e7982439166455360a35/tumblr_oaltb4XGZk1rtutkqo1_400.gifv);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .addDancerButton, .lineUpButton{
   padding:5px 12px;
   float:right;
 }
@@ -21,7 +22,7 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:50px solid red;
+  border-radius:0px;
   position:absolute;
 }

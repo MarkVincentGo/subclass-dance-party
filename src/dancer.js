@@ -52,3 +52,8 @@ makeDancer.prototype.setPosition = function(top, left) {
   };
   this.$node.css(styleSettings);
 };
+
+makeDancer.prototype.spin = function() {
+  var boundStep = this.spin.bind(this);
+  setTimeout(boundStep, 10);
+};
