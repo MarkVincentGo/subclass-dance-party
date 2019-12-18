@@ -18,6 +18,14 @@ describe('blinkyDancer', function() {
     expect(blinkyDancer.$node.toggle.called).to.be.true;
   });
 
+  it('should have a background image', function() {
+    expect(blinkyDancer.$node.css('background-image')).to.not.be.undefined;
+  });
+
+  it('should have a spin method', function() {
+    expect(blinkyDancer.spin()).to.not.throw;
+  });
+
   describe('dance', function() {
     it('should call step at least once per second', function() {
       sinon.spy(blinkyDancer, 'step');

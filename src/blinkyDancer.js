@@ -23,7 +23,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   this.x = 0;
   this.y = 0;
   this.$node.addClass('blinky');
-  this.angle = 0;
+  this.angle = 5;
 };
 
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
@@ -32,7 +32,7 @@ makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
 
 makeBlinkyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
-  //this.$node.toggle();
+  this.$node.toggle();
 
   // this.x++ * 0.01;
   // this.y = Math.abs(Math.sin(this.x));

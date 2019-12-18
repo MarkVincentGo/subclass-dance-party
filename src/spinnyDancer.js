@@ -21,13 +21,15 @@
 var makeSpinnyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.angle = 0;
-  this.dim = 1;
+  this.dim = 0;
   this.place = 0;
   this.x = 0;
   this.y = 0;
   this.$node.css('background-image', 'url(https://media.tenor.com/images/233e3f30c35e821f99eaa1847671183b/tenor.gif)');
   this.$node.css('background-size', 'contain');
   this.$node.css('background-repeat', 'no-repeat');
+  this.angle = 5;
+  this.$node.addClass('spinny');
 
 };
 
@@ -40,8 +42,8 @@ makeSpinnyDancer.prototype.step = function() {
   //this.angle = this.angle += 20;
   //this.$node.css('transform', `rotate(${this.angle}deg)`);
   this.dim = Math.abs(Math.sin(this.place++ * 0.01));
-  this.$node.css('height', `${this.dim * 100 * 0.7}px`);
-  this.$node.css('width', `${this.dim * 100 * 0.9}px`);
+  this.$node.css('height', `${this.dim * 500 * 0.7}px`);
+  this.$node.css('width', `${this.dim * 500 * 0.9}px`);
 
   //this.x++ * 0.0001;
   //this.y = Math.abs(Math.sin(this.x));
@@ -51,4 +53,10 @@ makeSpinnyDancer.prototype.step = function() {
   //};
   //this.$node.css(styleSettings);
 
+};
+
+makeSpinnyDancer.prototype.spin = function() {
+  makeDancer.prototype.spin.call(this);
+  this.angle += 1;
+  this.$node.css('transform', `rotate(${this.angle}deg)`);
 };
